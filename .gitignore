@@ -1,0 +1,5 @@
+# Original camera uploads are kept out of the website repository.
+/IMG_*
+/.DS_Store
+**/.DS_Store
+

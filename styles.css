@@ -1,0 +1,347 @@
+/* APE Electric LLC — shared styles for the four-page website. */
+
+:root {
+  color-scheme: dark;
+  --page: #080b10;
+  --surface: #101722;
+  --surface-raised: #151e2a;
+  --text: #e7ebf1;
+  --muted: #b5c0cf;
+  --blue: #3189ef;
+  --blue-light: #a8d2ff;
+  --line: rgba(255, 255, 255, .14);
+  --content-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  position: relative;
+  isolation: isolate;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background: var(--page);
+  font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+body::before {
+  /* A single, zoomed-out brand mark keeps the logo from competing with page content. */
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: url("logo.PNG") center / min(48vw, 520px) auto no-repeat;
+  opacity: .055;
+}
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { color: #fff; line-height: 1.2; }
+p { color: var(--muted); }
+
+/* Header and navigation */
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 78px;
+  padding: 6px max(4%, calc((100% - 1200px) / 2));
+  border-bottom: 1px solid var(--line);
+  background: rgba(6, 9, 14, .94);
+  backdrop-filter: blur(14px);
+}
+.logo { display: inline-flex; flex: 0 0 auto; align-items: center; }
+.site-logo { width: 170px; max-height: 68px; object-fit: contain; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 22px;
+}
+.nav-links > a {
+  padding: 9px 0;
+  color: #f4f6f9;
+  font-size: 14px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: color .18s ease;
+}
+.nav-links > a:hover,
+.nav-links > a[aria-current="page"] { color: var(--blue-light); }
+.nav-links .nav-cta {
+  padding: 10px 17px;
+  border-radius: 5px;
+  background: var(--blue);
+  color: #fff;
+}
+.nav-links .nav-cta:hover { background: #2176d6; color: #fff; }
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 19px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button-primary { background: var(--blue); color: #fff; }
+.button-primary:hover { background: #2176d6; }
+.button-outline { border-color: rgba(255, 255, 255, .45); background: rgba(8, 11, 16, .28); color: #fff; }
+.button-outline:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
+
+/* Home page: a short introduction and a straightforward list of services. */
+.home-main { width: min(1100px, calc(100% - 10%)); margin: 0 auto; }
+.home-page::before { opacity: .025; }
+.home-page .site-header, .home-page .site-footer { border-color: transparent; }
+.home-hero {
+  display: block;
+  min-height: 0;
+  padding: 54px 0 24px;
+}
+.hero-content { width: min(740px, 100%); }
+.eyebrow {
+  margin-bottom: 12px;
+  color: var(--blue-light);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .14em;
+  line-height: 1.4;
+}
+.hero h1 {
+  max-width: 700px;
+  margin-bottom: 16px;
+  font-size: clamp(36px, 4.5vw, 50px);
+  letter-spacing: -.025em;
+}
+.hero-content > p:not(.eyebrow) {
+  max-width: 640px;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Shared section spacing and inner-page introductions */
+.section { padding: 64px 5%; }
+.home-services,
+.home-projects { width: 100%; margin: 0 auto; }
+.home-services { padding: 28px 0 48px; }
+.home-section-heading { max-width: 720px; margin-bottom: 20px; }
+.home-section-heading h2,
+.home-projects-heading h2,
+.home-team-callout h2 { margin-bottom: 0; font-size: clamp(26px, 3vw, 34px); letter-spacing: -.025em; }
+.home-section-heading h2 { font-size: clamp(30px, 3.3vw, 38px); }
+.home-section-heading .eyebrow { font-size: 14px; }
+.home-section-heading > p:last-child { max-width: 640px; margin-bottom: 0; }
+.page-hero {
+  padding: 50px 6% 42px;
+  text-align: center;
+}
+.page-hero h1 { margin: 0 auto 12px; font-size: clamp(34px, 5vw, 52px); letter-spacing: -.035em; }
+.page-hero > p:not(.eyebrow) { max-width: 680px; margin: 0 auto; }
+
+/* Keep the home-page service names easy to scan, without cards or divider lines. */
+.home-service-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.home-service-list li {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  padding: 6px 0;
+  color: #f4f6f9;
+  font-size: 17px;
+  font-weight: 580;
+  letter-spacing: -.01em;
+}
+
+/* About page: one shared content width keeps the story and team together. */
+.about-main { width: min(1100px, calc(100% - 10%)); margin: 0 auto; }
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, .8fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 76px);
+  padding: 70px 0 62px;
+  border-bottom: 1px solid var(--line);
+}
+.about-intro-copy { max-width: 690px; }
+.about-intro-copy .eyebrow, .about-team-heading .eyebrow { margin-bottom: 12px; }
+.about-intro h1 { max-width: 660px; margin-bottom: 18px; font-size: clamp(36px, 5vw, 54px); letter-spacing: -.04em; }
+.about-intro-copy > p:last-child { max-width: 650px; margin: 0; font-size: 17px; }
+.about-facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.about-facts div { display: grid; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.about-facts strong { color: #fff; font-size: 17px; }
+.about-facts span { color: var(--muted); font-size: 14px; }
+.about-team { padding: 44px 0 72px; }
+.about-team-heading { margin-bottom: 24px; }
+.about-team-heading h2 { margin: 0; font-size: clamp(27px, 3.5vw, 36px); letter-spacing: -.025em; }
+.language-note { color: var(--blue-light); font-size: .58em; font-weight: 600; white-space: nowrap; }
+.about-team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.about-person { min-height: 110px; padding: 20px; border: 1px solid var(--line); border-radius: 7px; background: rgba(16, 23, 34, .88); }
+.about-person h3 { margin: 0 0 5px; font-size: 18px; }
+.about-person p { margin: 0; font-size: 14px; }
+
+/* Contact page */
+.contact-section { padding-top: 20px; }
+.contact-methods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: min(100%, 940px); margin: 0 auto; }
+.contact-card {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(21, 30, 42, .94), rgba(10, 14, 20, .92));
+}
+.contact-card-featured { border-color: rgba(49, 137, 239, .5); }
+.contact-card-icon { color: var(--blue-light); font-size: 22px; }
+.contact-card h3, .contact-card p { margin: 0; }
+.contact-card h3 { font-size: 17px; }
+.contact-card .contact-action { margin-top: 5px; color: var(--blue-light); font-weight: 700; overflow-wrap: anywhere; }
+.contact-card .contact-action:hover { text-decoration: underline; }
+.business-hours {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: min(100%, 940px);
+  margin: 18px auto 0;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16, 23, 34, .82);
+}
+.business-hours-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(49, 137, 239, .14);
+  color: var(--blue-light);
+  font-size: 25px;
+}
+.business-hours h2 { margin: 0 0 3px; color: #fff; font-size: 14px; letter-spacing: .04em; }
+.business-hours p { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; }
+.business-hours p span { color: var(--muted); }
+.business-hours p strong { color: #fff; font-weight: 700; }
+
+/* Work page: portrait photos stay uncropped; videos keep native controls. */
+.work-hero { padding-bottom: 25px; }
+.work-gallery { padding-top: 12px; }
+.work-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+.work-gallery .gallery-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0b1017;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+  transition: transform .2s ease, border-color .2s ease;
+}
+.work-gallery .gallery-card:hover { transform: translateY(-3px); border-color: rgba(168, 210, 255, .48); }
+.work-gallery .gallery-card img,
+.work-gallery .gallery-card video {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #05080d;
+}
+.work-gallery .gallery-card img { height: clamp(190px, 25vw, 300px); object-fit: contain; }
+.work-gallery .gallery-card video { object-fit: contain; }
+
+/* Footer */
+.site-footer {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 28px 5% 22px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.site-footer p { margin: 0; font-size: 14px; }
+.site-footer .copyright { color: #929eae; font-size: 12px; }
+
+/* Small screens: keep navigation usable and content comfortably spaced. */
+@media (max-width: 900px) {
+  .site-header { gap: 16px; }
+  .site-logo { width: 145px; }
+  .nav-links { gap: 6px 14px; }
+  .nav-links > a { font-size: 13px; }
+  .work-gallery .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-service-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  body::before { background-size: min(64vw, 360px) auto; }
+  .site-header { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto; min-height: 0; gap: 0; padding: 5px 6% 8px; }
+  .logo { min-height: 58px; }
+  .site-logo { width: 68px; max-height: 56px; }
+  .nav-links { flex: none; width: 100%; flex-wrap: nowrap; justify-content: space-between; gap: 4px; overflow-x: auto; padding: 0 0 2px; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links > a { flex: 0 0 auto; padding: 8px 0; font-size: clamp(10px, 3vw, 12px); }
+  .nav-links .nav-cta { position: static; display: inline-flex; padding: 6px clamp(4px, 1.2vw, 7px); font-size: clamp(9px, 2.5vw, 11px); }
+  .work-gallery .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+  .work-gallery .gallery-card img,
+  .work-gallery .gallery-card video { height: auto; max-height: 70vh; aspect-ratio: auto; object-fit: contain; }
+  .home-main { width: 88%; }
+  .home-hero { padding: 30px 0 24px; }
+  .home-services { padding: 22px 0 32px; }
+  .home-service-list { gap: 4px 20px; }
+  .section { padding: 48px 6%; }
+  .about-main { width: 88%; }
+  .about-intro { grid-template-columns: 1fr; gap: 28px; padding: 48px 0 38px; }
+  .about-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .about-facts div { align-content: start; }
+  .about-team { padding: 34px 0 48px; }
+}
+@media (max-width: 540px) {
+  body::before { opacity: .07; }
+  .home-hero h1 { font-size: clamp(27px, 7.2vw, 36px); }
+  .home-section-heading { margin-bottom: 12px; }
+  .home-section-heading .eyebrow { margin-bottom: 7px; }
+  .home-section-heading h2 { font-size: 30px; }
+  .home-service-list { gap: 0; }
+  .home-service-list li { min-height: 46px; font-size: 16px; }
+  .hero-actions { align-items: stretch; }
+  .hero-actions .button { flex: 1 1 100%; }
+  .home-service-list { grid-template-columns: 1fr; }
+  .contact-methods, .about-team-grid { grid-template-columns: 1fr; }
+  .about-facts { grid-template-columns: 1fr; gap: 0; }
+  .contact-card { padding: 20px; }
+  .work-gallery .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+  .work-gallery { padding-inline: 14px; }
+}
+@media (max-width: 360px) {
+  .nav-links { gap: 6px 9px; }
+  .nav-links > a { font-size: 11px; }
+  .nav-links { gap: 4px; }
+  .work-gallery .gallery-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
