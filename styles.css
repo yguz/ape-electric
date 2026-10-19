@@ -381,31 +381,24 @@ p { color: var(--muted); }
 /* Refined home introduction, contact heading, and swipeable work galleries. */
 .home-hero {
   position: relative;
-  min-height: 350px;
+  min-height: 0;
   display: flex;
   align-items: center;
-  padding: clamp(48px, 7vw, 84px) clamp(24px, 5vw, 64px);
-  border: 1px solid rgba(168, 210, 255, .16);
-  border-radius: 14px;
-  background: linear-gradient(112deg, rgba(12, 20, 31, .98) 8%, rgba(14, 29, 47, .88) 68%, rgba(26, 67, 111, .42));
-  box-shadow: 0 22px 60px rgba(0, 0, 0, .25);
+  padding: clamp(48px, 7vw, 84px) 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 .home-hero::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 28%;
-  content: "";
-  pointer-events: none;
-  border-radius: 0 14px 14px 0;
-  background: linear-gradient(90deg, transparent, rgba(49, 137, 239, .12));
+  display: none;
 }
 .home-hero .hero-content { position: relative; z-index: 1; }
 .home-hero .eyebrow { margin-bottom: 17px; }
 .home-hero h1 { max-width: 720px; margin-bottom: 17px; }
 .home-hero .eyebrow { max-width: 900px; margin-bottom: 20px; font-size: clamp(28px, 4.3vw, 48px); letter-spacing: .09em; line-height: 1.16; }
 .home-hero h1 { max-width: 720px; margin-bottom: 0; font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -.025em; }
+.home-intro { max-width: 620px; margin: 17px 0 0; color: #c0cad8; font-size: clamp(16px, 2vw, 19px); }
 .home-services { padding-top: 40px; }
 .home-section-heading h2 { color: var(--blue-light); }
 .contact-hero h1 { color: #3189ef; text-shadow: 0 0 28px rgba(49, 137, 239, .2); }
@@ -423,7 +416,7 @@ p { color: var(--muted); }
 .gallery-video-group .gallery-card { flex-basis: clamp(300px, 44vw, 500px); }
 .gallery-video-group .gallery-card video { height: clamp(230px, 34vw, 340px); }
 @media (max-width: 700px) {
-  .home-hero { min-height: 0; padding: 38px 24px; }
+  .home-hero { min-height: 0; padding: 38px 0; }
   .home-services { padding-top: 30px; }
   .work-gallery { gap: 28px; padding: 8px 5% 42px; }
   .work-gallery .gallery-card { flex-basis: min(82vw, 390px); min-height: 280px; }
@@ -432,7 +425,6 @@ p { color: var(--muted); }
   .gallery-video-group .gallery-card video { height: auto; aspect-ratio: 16 / 10; }
 }
 @media (max-width: 540px) {
-  .home-hero { border-radius: 10px; }
   .home-hero .eyebrow { font-size: clamp(24px, 7vw, 32px); }
   .home-hero h1 { font-size: clamp(21px, 5.4vw, 27px); }
 }
