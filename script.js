@@ -33,3 +33,11 @@ document.querySelectorAll(".email-action").forEach(function (link) {
     link.rel = "noopener";
   }
 });
+
+document.querySelectorAll(".gallery-controls button").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var gallery = button.closest(".gallery-group").querySelector(".gallery-grid");
+    var direction = button.dataset.scroll === "right" ? 1 : -1;
+    gallery.scrollBy({ left: direction * gallery.clientWidth * 0.8, behavior: "smooth" });
+  });
+});
