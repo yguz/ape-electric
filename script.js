@@ -41,3 +41,32 @@ document.querySelectorAll(".gallery-controls button").forEach(function (button) 
     gallery.scrollBy({ left: direction * gallery.clientWidth * 0.8, behavior: "smooth" });
   });
 });
+
+// Add lightweight motion and a return-to-top control consistently on every page.
+var revealItems = document.querySelectorAll("main > section, .home-services, .about-person, .contact-card, .business-hours");
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.body.classList.add("js-ready");
+  revealItems.forEach(function (item) { item.classList.add("reveal-on-scroll"); });
+  var revealObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealItems.forEach(function (item) { revealObserver.observe(item); });
+}
+
+var backToTop = document.createElement("button");
+backToTop.className = "back-to-top";
+backToTop.type = "button";
+backToTop.setAttribute("aria-label", "Back to top");
+backToTop.innerHTML = "↑";
+document.body.appendChild(backToTop);
+window.addEventListener("scroll", function () {
+  backToTop.classList.toggle("is-visible", window.scrollY > 420);
+}, { passive: true });
+backToTop.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
