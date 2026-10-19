@@ -376,3 +376,70 @@ p { color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Refined home introduction, contact heading, and swipeable work galleries. */
+.home-hero {
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  padding: clamp(48px, 7vw, 84px) clamp(24px, 5vw, 64px);
+  border: 1px solid rgba(168, 210, 255, .16);
+  border-radius: 14px;
+  background: linear-gradient(112deg, rgba(12, 20, 31, .98) 8%, rgba(14, 29, 47, .88) 68%, rgba(26, 67, 111, .42));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .25);
+}
+.home-hero::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 28%;
+  content: "";
+  pointer-events: none;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(90deg, transparent, rgba(49, 137, 239, .12));
+}
+.home-hero .hero-content { position: relative; z-index: 1; }
+.home-hero .eyebrow { margin-bottom: 17px; }
+.home-hero h1 { max-width: 720px; margin-bottom: 17px; }
+.home-intro { max-width: 620px; margin-bottom: 26px; color: #c0cad8; font-size: clamp(16px, 2vw, 19px); }
+.home-hero .hero-actions { gap: 12px; }
+.home-trust { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 22px 0 4px; border: 1px solid var(--line); border-radius: 10px; background: rgba(16, 23, 34, .75); }
+.home-trust > div { display: grid; gap: 2px; padding: 16px 20px; }
+.home-trust > div + div { border-left: 1px solid var(--line); }
+.home-trust strong { color: #fff; font-size: 15px; }
+.home-trust span { color: var(--muted); font-size: 13px; }
+.home-services { padding-top: 40px; }
+.home-section-heading h2 { color: var(--blue-light); }
+.contact-hero h1 { color: var(--blue-light); }
+.work-gallery { display: grid; gap: 36px; padding: 12px 5% 58px; }
+.gallery-group { width: 100%; max-width: 1180px; margin: 0 auto; }
+.gallery-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 15px; }
+.gallery-heading h2 { margin: 0; color: var(--blue-light); font-size: clamp(23px, 3vw, 30px); }
+.gallery-controls { display: flex; gap: 8px; }
+.gallery-controls button { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-raised); color: #fff; font-size: 25px; line-height: 1; cursor: pointer; }
+.gallery-controls button:hover { border-color: var(--blue-light); background: rgba(49, 137, 239, .22); }
+.work-gallery .gallery-grid { display: flex; gap: 16px; width: 100%; max-width: none; margin: 0; padding: 4px 2px 18px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: rgba(168, 210, 255, .55) rgba(255, 255, 255, .08); scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.work-gallery .gallery-card { flex: 0 0 clamp(270px, 35vw, 390px); min-height: 300px; padding: 12px; scroll-snap-align: start; }
+.work-gallery .gallery-card img,
+.work-gallery .gallery-card video { width: 100%; height: clamp(290px, 35vw, 410px); max-height: none; aspect-ratio: auto; object-fit: contain; transform: none; }
+.gallery-video-group .gallery-card { flex-basis: clamp(300px, 44vw, 500px); }
+.gallery-video-group .gallery-card video { height: clamp(230px, 34vw, 340px); }
+@media (max-width: 700px) {
+  .home-hero { min-height: 0; padding: 38px 24px; }
+  .home-trust { grid-template-columns: 1fr; }
+  .home-trust > div { padding: 12px 16px; }
+  .home-trust > div + div { border-top: 1px solid var(--line); border-left: 0; }
+  .home-services { padding-top: 30px; }
+  .work-gallery { gap: 28px; padding: 8px 5% 42px; }
+  .work-gallery .gallery-card { flex-basis: min(82vw, 390px); min-height: 280px; }
+  .work-gallery .gallery-card img { height: min(72vh, 420px); }
+  .gallery-video-group .gallery-card { flex-basis: min(86vw, 500px); }
+  .gallery-video-group .gallery-card video { height: auto; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 540px) {
+  .home-hero { border-radius: 10px; }
+  .home-hero .hero-actions { align-items: stretch; }
+  .home-hero .hero-actions .button { flex: 1 1 100%; }
+}
