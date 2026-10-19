@@ -206,7 +206,7 @@ p { color: var(--muted); }
 }
 .about-intro-copy { max-width: 690px; }
 .about-intro-copy .eyebrow, .about-team-heading .eyebrow { margin-bottom: 12px; }
-.about-intro h1 { max-width: 660px; margin-bottom: 12px; color: var(--blue-light); font-size: 54px; font-size: clamp(40px, 5vw, 56px); letter-spacing: -.04em; }
+.about-intro h1 { max-width: 100%; margin-bottom: 12px; color: var(--blue-light); font-size: clamp(28px, 5vw, 56px); letter-spacing: -.04em; white-space: nowrap; }
 .about-subtitle { max-width: 660px; margin: 0 0 16px; color: #3189ef; font-size: clamp(20px, 2.4vw, 26px); font-weight: 600; letter-spacing: -.02em; }
 .about-intro-copy > p:last-child { max-width: 650px; margin: 0; font-size: 17px; }
 .about-facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
@@ -394,11 +394,8 @@ p { color: var(--muted); }
   display: none;
 }
 .home-hero .hero-content { position: relative; z-index: 1; }
-.home-hero .eyebrow { margin-bottom: 17px; }
-.home-hero h1 { max-width: 720px; margin-bottom: 17px; }
-.home-hero .eyebrow { max-width: 900px; margin-bottom: 20px; color: #3189ef; font-size: clamp(28px, 4.3vw, 48px); letter-spacing: .09em; line-height: 1.16; }
-.home-hero h1 { max-width: 720px; margin-bottom: 0; font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -.025em; }
-.home-intro { max-width: 620px; margin: 17px 0 0; color: #c0cad8; font-size: clamp(16px, 2vw, 19px); }
+.home-hero .eyebrow { display: block; width: max-content; max-width: 100%; margin: 0 0 4px; color: #3189ef; font-size: clamp(9px, 3.8vw, 34px); letter-spacing: .025em; line-height: 1.16; white-space: nowrap; }
+.home-intro { max-width: 900px; margin: 0; color: #c0cad8; font-size: clamp(15px, 1.8vw, 19px); }
 .home-services { padding-top: 40px; }
 .home-section-heading h2 { color: var(--blue-light); }
 .contact-hero h1 { color: #3189ef; text-shadow: 0 0 28px rgba(49, 137, 239, .2); }
@@ -425,8 +422,8 @@ p { color: var(--muted); }
   .gallery-video-group .gallery-card video { height: auto; aspect-ratio: 16 / 10; }
 }
 @media (max-width: 540px) {
-  .home-hero .eyebrow { font-size: clamp(24px, 7vw, 32px); }
-  .home-hero h1 { font-size: clamp(21px, 5.4vw, 27px); }
+  .home-hero .eyebrow { font-size: clamp(9px, 3.8vw, 20px); letter-spacing: .015em; }
+  .about-intro h1 { font-size: clamp(26px, 8vw, 38px); }
 }
 
 /* Shared JavaScript enhancements: gentle reveal and a quick return to the top. */
