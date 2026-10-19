@@ -35,7 +35,7 @@ document.querySelectorAll(".email-action").forEach(function (link) {
 });
 
 // Add lightweight motion and a return-to-top control consistently on every page.
-var revealItems = document.querySelectorAll("main > section, .home-services, .about-person, .contact-card, .business-hours");
+var revealItems = document.querySelectorAll("main > section:not(.work-gallery), .home-services, .about-person, .contact-card, .business-hours");
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.body.classList.add("js-ready");
   revealItems.forEach(function (item) { item.classList.add("reveal-on-scroll"); });
