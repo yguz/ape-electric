@@ -8,7 +8,7 @@
   --text: #e7ebf1;
   --muted: #b5c0cf;
   --blue: #3189ef;
-  --blue-light: #a8d2ff;
+  --blue-light: #3189ef;
   --line: rgba(255, 255, 255, .14);
   --content-width: 1120px;
 }
@@ -93,7 +93,7 @@ p { color: var(--muted); }
   background: var(--blue);
   color: #fff;
 }
-.nav-links .nav-cta:hover { background: #2176d6; color: #fff; }
+.nav-links .nav-cta:hover { background: #3189ef; color: #fff; }
 
 /* Buttons */
 .button {
@@ -111,7 +111,7 @@ p { color: var(--muted); }
 }
 .button:hover { transform: translateY(-2px); }
 .button-primary { background: var(--blue); color: #fff; }
-.button-primary:hover { background: #2176d6; }
+.button-primary:hover { background: #3189ef; }
 .button-outline { border-color: rgba(255, 255, 255, .45); background: rgba(8, 11, 16, .28); color: #fff; }
 .button-outline:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
 
@@ -293,7 +293,7 @@ p { color: var(--muted); }
   box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
   transition: transform .2s ease, border-color .2s ease;
 }
-.work-gallery .gallery-card:hover { transform: translateY(-3px); border-color: rgba(168, 210, 255, .48); }
+.work-gallery .gallery-card:hover { transform: translateY(-3px); border-color: rgba(49, 137, 239, .48); }
 .work-gallery .gallery-card img,
 .work-gallery .gallery-card video {
   width: 100%;
@@ -409,7 +409,7 @@ p { color: var(--muted); }
 .gallery-controls { display: flex; gap: 8px; }
 .gallery-controls button { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-raised); color: #fff; font-size: 25px; line-height: 1; cursor: pointer; }
 .gallery-controls button:hover { border-color: var(--blue-light); background: rgba(49, 137, 239, .22); }
-.work-gallery .gallery-grid { display: flex; gap: 16px; width: 100%; max-width: none; margin: 0; padding: 4px 2px 18px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: rgba(168, 210, 255, .55) rgba(255, 255, 255, .08); scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.work-gallery .gallery-grid { display: flex; gap: 16px; width: 100%; max-width: none; margin: 0; padding: 4px 2px 18px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: rgba(49, 137, 239, .55) rgba(255, 255, 255, .08); scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
 .work-gallery .gallery-card { flex: 0 0 clamp(270px, 35vw, 390px); min-height: 300px; padding: 12px; scroll-snap-align: start; }
 .work-gallery .gallery-card img,
 .work-gallery .gallery-card video { width: 100%; height: clamp(290px, 35vw, 410px); max-height: none; aspect-ratio: auto; object-fit: contain; transform: none; }
