@@ -206,18 +206,19 @@ p { color: var(--muted); }
 }
 .about-intro-copy { max-width: 690px; }
 .about-intro-copy .eyebrow, .about-team-heading .eyebrow { margin-bottom: 12px; }
-.about-intro h1 { max-width: 660px; margin-bottom: 18px; font-size: 54px; font-size: clamp(36px, 5vw, 54px); letter-spacing: -.04em; }
+.about-intro h1 { max-width: 660px; margin-bottom: 12px; color: var(--blue-light); font-size: 54px; font-size: clamp(40px, 5vw, 56px); letter-spacing: -.04em; }
+.about-subtitle { max-width: 660px; margin: 0 0 16px; color: #fff; font-size: clamp(20px, 2.4vw, 26px); font-weight: 600; letter-spacing: -.02em; }
 .about-intro-copy > p:last-child { max-width: 650px; margin: 0; font-size: 17px; }
 .about-facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
 .about-facts div { display: grid; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .about-facts strong { color: #fff; font-size: 17px; }
 .about-facts span { color: var(--muted); font-size: 14px; }
 .about-team { padding: 44px 0 72px; }
-.about-team-heading { margin-bottom: 24px; }
+.about-team-heading { margin-bottom: 20px; }
 .about-team-heading h2 { margin: 0; font-size: clamp(27px, 3.5vw, 36px); letter-spacing: -.025em; }
-.language-note { color: var(--blue-light); font-size: .58em; font-weight: 600; white-space: nowrap; }
+.language-note { margin: 5px 0 0; color: var(--blue-light); font-size: 14px; font-weight: 600; }
 .about-team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.about-person { min-height: 110px; padding: 20px; border: 1px solid var(--line); border-radius: 7px; background: rgba(16, 23, 34, .88); }
+.about-person { min-height: 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 7px; background: rgba(16, 23, 34, .88); }
 .about-person h3 { margin: 0 0 5px; font-size: 18px; }
 .about-person p { margin: 0; font-size: 14px; }
 
