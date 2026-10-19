@@ -449,3 +449,14 @@ p { color: var(--muted); }
   .work-gallery .gallery-card img { height: min(62vh, 460px); }
   .work-gallery .gallery-card video { max-height: 65vh; }
 }
+
+
+/* Keep project media comfortably framed and lift contact cards closer to the title. */
+.work-gallery .gallery-card img,
+.work-gallery .gallery-card video { width: min(100%, 560px); height: clamp(220px, 24vw, 290px); margin-inline: auto; object-fit: contain; }
+.contact-hero { padding-bottom: 8px; }
+.contact-section { padding-top: 0; }
+@media (max-width: 700px) {
+  .work-gallery .gallery-card img,
+  .work-gallery .gallery-card video { width: min(100%, 480px); height: min(48vh, 350px); }
+}
