@@ -396,16 +396,16 @@ p { color: var(--muted); }
 .home-hero .hero-content { position: relative; z-index: 1; }
 .home-hero .eyebrow { margin-bottom: 17px; }
 .home-hero h1 { max-width: 720px; margin-bottom: 17px; }
-.home-hero .eyebrow { max-width: 900px; margin-bottom: 20px; font-size: clamp(28px, 4.3vw, 48px); letter-spacing: .09em; line-height: 1.16; }
+.home-hero .eyebrow { max-width: 900px; margin-bottom: 20px; color: #3189ef; font-size: clamp(28px, 4.3vw, 48px); letter-spacing: .09em; line-height: 1.16; }
 .home-hero h1 { max-width: 720px; margin-bottom: 0; font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -.025em; }
 .home-intro { max-width: 620px; margin: 17px 0 0; color: #c0cad8; font-size: clamp(16px, 2vw, 19px); }
 .home-services { padding-top: 40px; }
 .home-section-heading h2 { color: var(--blue-light); }
 .contact-hero h1 { color: #3189ef; text-shadow: 0 0 28px rgba(49, 137, 239, .2); }
 .work-gallery { display: grid; gap: 36px; padding: 12px 5% 58px; }
-.gallery-group { width: 100%; max-width: 1180px; margin: 0 auto; }
-.gallery-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 15px; }
-.gallery-heading h2 { margin: 0; color: var(--blue-light); font-size: clamp(23px, 3vw, 30px); }
+.gallery-group { width: 100%; max-width: 1080px; margin: 0 auto; }
+.gallery-heading { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0 0 15px; text-align: center; }
+.gallery-heading h2 { margin: 0; color: #3189ef; font-size: clamp(23px, 3vw, 30px); }
 .gallery-controls { display: flex; gap: 8px; }
 .gallery-controls button { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-raised); color: #fff; font-size: 25px; line-height: 1; cursor: pointer; }
 .gallery-controls button:hover { border-color: var(--blue-light); background: rgba(49, 137, 239, .22); }
